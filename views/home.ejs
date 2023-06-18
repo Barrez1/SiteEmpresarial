@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs') %>
+<header>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-md">
+      <a class="navbar-brand" href="site/"><font color="#9900FF">Voltar</font></a>
+    </div>
+  </nav>
+</header>
+
+<br><br><br><br>
+
+  <body style="background-color:rgb(128, 128, 129);">
+
+
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            Seus Horarios Agendados:
+            <div class="text-end">
+              <a href="/novo-cadastro" class="btn btn-primary">Novo Agendamento</a>
+            </div>
+          </div>
+          <div class="card-body">
+            <table class="table align-middle">
+              <tbody>
+                <% cadastro.forEach(cadastro=> { %>
+                  <tr>
+                    <th scope="row">
+                      <%= cadastro.nome  %>
+                      | Agendado Para: 
+                      <%= cadastro.email %>
+                    </th>
+                    <td class="d-flex justify-content-end grid gap-2">
+                      <a class="btn btn-warning">Conferir</a>
+                      <a class="btn btn-secondary" href="/editar-cadastro/<%= cadastro.id %>">Editar</a>
+                      <a class="btn btn-danger">Excluir</a>
+                    </td>
+                 
+                  </tr>
+               
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </body>
+
+  <%- include('partials/foolter.ejs') %>

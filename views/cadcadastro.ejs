@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-md">
+        <a class="navbar-brand" href="site/">Voltar</a>
+      </div>
+    </nav>
+  </header>
+  
+  <br><br><br><br>
+  
+    <body style="background-color:rgb(128, 128, 129);">
+        
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        Agendamento:
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/salvar-cadastro">
+                            <div class="mb-3">
+                                <label for="lblTitulo" class="form-label">Nome:</label>
+                                <input type="text" class="form-control" id="lblTitulo" name="f_nome"
+                                    placeholder="Digite o seu nome..." required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ttaDescricao" class="form-label">Horario:</label>
+                                <input class="form-control" id="ttaDescricao" rows="3" name='f_email'
+                                 placeholder="Digite o seu Horario..." required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" class="btn btn-success" value="Cadastrar">
+                                <a href="/" class="btn btn-danger">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+    <%- include('partials/foolter.ejs') %>
